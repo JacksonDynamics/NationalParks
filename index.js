@@ -21,19 +21,23 @@ for (let desc of descriptions.values()) {
   }
 
 
-  const parks = document.querySelectorAll(".park-display");
-  const numberParks = parks.length;
-  const newElement = document.createElement("div");
-  newElement.innerText = `${numberParks} exciting parks to visit`;
-  newElement.classList.add("header-statement");
-  const header = document.querySelector("header");
-  header.appendChild(newElement);
+const parks = document.querySelectorAll(".park-display");
+const numberParks = parks.length;
+const newElement = document.createElement("div");
+newElement.innerText = `${numberParks} exciting parks to visit`;
+newElement.classList.add("header-statement");
+const header = document.querySelector("header");
+header.append(newElement);
 
-  // Get the parent element of all parks
-const main = document.querySelector("main");
 
-// Select a single park
-const park = main.querySelector(".park-display");
 
-// Remove that park
-main.removeChild(park);
+// Select all the buttons for all the parks
+const allBtns = document.querySelectorAll(".rate-button");
+
+// Iterate through the list of buttons and add an event handler to each
+allBtns.forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    const park = event.target.parentNode;
+    park.style.backgroundColor = "#c8e6c9";
+  });
+});
