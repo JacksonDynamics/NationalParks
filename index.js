@@ -107,7 +107,6 @@ ratingSorter.addEventListener("click", (event) => {
   main.innerHTML = "";
   
 
-
   // 4. Create an array
   const ratingStats = Array.from(stats)  
 
