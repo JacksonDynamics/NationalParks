@@ -25,13 +25,9 @@ const sortByName = (parkA, parkB) => {
 
 // function for sorting by rating
 const sortByRating = (parkA, parkB) => {
-  const parkARating = parseFloat(
-    parkA.querySelector(".rating-display > .value").innerText
-  );
-  const parkBRating = parseFloat(
-    parkB.querySelector(".rating-display > .value").innerText
-  );
-  return parkBRating - parkARating;
+  const parkARating = parseFloat(parkA.querySelector(".rating-display > .value").innerText);
+  const parkBRating = parseFloat(parkB.querySelector(".rating-display > .value").innerText);
+  return parkARating - parkBRating;
 };
 
 // function for handling the nameSorter click
