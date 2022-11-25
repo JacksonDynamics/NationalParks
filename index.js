@@ -105,3 +105,22 @@ const main = () => {
 
 // Add event listener for DOMContentLoaded
 window.addEventListener("DOMContentLoaded", main);
+
+
+// --------------------------------------------------------------
+
+
+const submitHandler = (event) => {
+  event.preventDefault()
+  console.log("The form was submitted");
+};
+
+const mainForm = () => {
+  // Get the form element
+  const form = document.querySelector("#park-form");
+
+  // Attach the submit handler
+  form.addEventListener("submit", submitHandler);
+};
+
+window.addEventListener("DOMContentLoaded", mainForm);
