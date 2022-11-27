@@ -1,7 +1,6 @@
 
 
 
-
 function validateExists(value) {
   return value && value.trim();
 }
