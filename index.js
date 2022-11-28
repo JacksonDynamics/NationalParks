@@ -165,3 +165,35 @@ const main = () => {
 
 // Add event listener for DOMContentLoaded
 window.addEventListener("DOMContentLoaded", main);
+
+
+
+
+const renderOnePark = (park) => {
+  // Get the individual properties of the park
+  const { name, location, description, established, area, rating } = park;
+
+  const content = `
+      <section class="park-display">
+        <h2>${name}</h2>
+        <div class="location-display">${location}</div>
+        <div class="description-display">${description}</div>
+        <button class="rate-button" title="Add to Favourites">&#9734;</button>
+        <div class="stats">
+          <div class="established-display stat">
+            <h3>Established</h3>
+            <div class="value">${established}</div>
+          </div>
+          <div class="area-display stat">
+            <h3>Area</h3>
+            <div class="value">${area}</div>
+          </div>
+          <div class="rating-display stat">
+            <h3>Rating</h3>
+            <div class="value">${rating}</div>
+          </div>
+        </div>
+      </section>
+  `;
+  return content;
+};
