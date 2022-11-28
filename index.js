@@ -7,8 +7,15 @@ const submitHandler = (event) => {
   // Keep track of if any errors are found
   let hasErrors = false;
 
-  // Validation code skipped for brevity
-  // ...
+  formData.forEach((value, key) => {
+    let errorId = `#${key}-error`;
+    if (value.trim() === "") {
+      document.querySelector(errorId).style.display = "block";
+      hasErrors = true;
+    } else {
+      document.querySelector(errorId).style.display = "none";
+    }
+  });
 
   // If there are no errors
   if (!hasErrors) {
