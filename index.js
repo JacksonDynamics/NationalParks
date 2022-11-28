@@ -37,8 +37,10 @@ const submitHandler = (event) => {
 
 // function to handler favorite button clicks
 const favoriteButtonClickHandler = (event) => {
-  const park = event.target.parentNode;
-  park.style.backgroundColor = "#c8e6c9";
+  if (event.target && event.target.nodeName == "BUTTON") {
+    const park = event.target.parentNode;
+    park.style.backgroundColor = "#c8e6c9";
+  }
 };
 
 // function for sorting by name
@@ -94,13 +96,12 @@ const main = () => {
   // add an event listener
   ratingSorter.addEventListener("click", ratingSorterClickHandler);
 
-  // select all the buttons for all the parks
-  const allBtns = document.querySelectorAll(".rate-button");
+  // Select all the buttons for all the parks
+  const main = document.querySelector("main");
 
-  // iterate the list of buttons and add an event handler to each
-  allBtns.forEach((btn) => {
-    btn.addEventListener("click", favoriteButtonClickHandler);
-  });
+  // Add event handler to the main
+  main.addEventListener("click", favoriteButtonClickHandler);
+
 
   // get the form element
   const form = document.querySelector("#park-form");
